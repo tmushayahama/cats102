@@ -18,33 +18,13 @@
   vm.myInterval = 5000;
   vm.noWrapSlides = false;
   vm.active = 0;
-  vm.slides = [
-   {
-    image: 'src/assets/images/landing-page/background-surfing.png',
-    text: "surfing",
-    id: 0
-   },
-   {
-    image: 'src/assets/images/landing-page/background-grilling.png',
-    text: "grilling",
-    id: 1
-   },
-   {
-    image: 'src/assets/images/landing-page/background-chess.png',
-    text: "chess",
-    id: 2
-   },
-   {
-    image: 'src/assets/images/landing-page/background-piano.png',
-    text: "piano",
-    id: 3
-   },
-   {
-    image: 'src/assets/images/landing-page/background-soccer.png',
-    text: "soccer",
-    id: 4
-   }
-  ];
+
+  $(document).bind('mousemove', function (ev) {
+   var el = document.getElementById('ct-laser-pointer');
+   var offset = $('#ct-laser-pointer').offset();
+   el.style.transform = 'translateY(' + (ev.clientY - offset.top) + 'px)';
+   el.style.transform += 'translateX(' + (ev.clientX - offset.left) + 'px)';
+  });
 
   init();
 

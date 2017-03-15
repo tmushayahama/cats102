@@ -12,14 +12,27 @@ $color-4: #9A6D36;
 $color-5: #41642A;
 $color-6: #077568;
 
-.gb-cat-holder {
+
+
+.gb-laser-holder {
+ //cursor: none;
  height:  400px;
+ // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
  img {
   height: 100%;
   width: 100%;
   border: #CCC soild 1px;
   background-color: rgba(material-color('blue-grey', '900'), 0.4);
  }
+
+}
+
+#ct-laser-pointer {
+ height: 10px;
+ width: 10px;
+ border-radius: 50%;
+ background-color: #C20000;
+ transition: transform 0.23s;
 }
 
 .gb-wall-h,
@@ -81,6 +94,9 @@ $color-6: #077568;
 .gb-welcome-section-4,
 .gb-welcome-section-5,
 .gb-welcome-section-6 {
+ height: 100%;
+ min-height: 100%;
+ max-height: 100%;
  background-color: #ECEFF1;
  position: relative;
  padding: 10px 0 10px 0;
@@ -179,13 +195,8 @@ $color-6: #077568;
 }
 
 .gb-welcome-section-4 {
- background: url(../../../src/assets/images/landing-page/background-5.jpg);
+ background: url(../../../src/assets/images/landing-page/background-4.jpg);
 
- .gb-door {
-  border: material-color('blue-grey', '600') solid 2px;
-  border-left: material-color('blue-grey', '600') solid 6px;
-  border-bottom: #ECEFF1 solid 10px;
- }
 }
 
 .gb-welcome-section-5 {
