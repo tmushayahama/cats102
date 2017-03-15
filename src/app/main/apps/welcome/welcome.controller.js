@@ -19,11 +19,32 @@
   vm.noWrapSlides = false;
   vm.active = 0;
 
-  $(document).bind('mousemove', function (ev) {
+  var pointerEventToXY = function (e) {
+   var out = {x: 0, y: 0};
+
+   if (e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel') {
+    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    out.x = touch.pageX;
+    out.y = touch.pageY;
+   } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover' || e.type == 'mouseout' || e.type == 'mouseenter' || e.type == 'mouseleave') {
+    out.x = e.pageX;
+    out.y = e.pageY;
+   }
+   return out;
+  };
+
+  $(document).bind('mousemove touchmove', function (ev) {
    var el = document.getElementById('ct-laser-pointer');
+   var cat = document.getElementById('ct-cat');
    var offset = $('#ct-laser-pointer').offset();
-   el.style.transform = 'translateY(' + (ev.clientY - offset.top) + 'px)';
-   el.style.transform += 'translateX(' + (ev.clientX - offset.left) + 'px)';
+   var x = pointerEventToXY(ev).x;
+   var y = pointerEventToXY(ev).y;
+
+   el.style.transform += 'translateX(' + (x) + 'px)';
+   el.style.transform = 'translateY(' + (y) + 'px)';
+
+   cat.style.transform += 'translateX(' + (x) + 'px)';
+   cat.style.transform = 'translateY(' + (y) + 'px)';
   });
 
   init();
