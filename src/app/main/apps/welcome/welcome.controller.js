@@ -7,7 +7,7 @@
          .controller('WelcomeController', WelcomeController);
 
  /** @ngInject */
- function WelcomeController(WelcomeService, $scope, $rootScope)
+ function WelcomeController(WelcomeService, DialogComponentService, $scope, $rootScope)
  {
   var vm = this;
 
@@ -18,6 +18,9 @@
   vm.myInterval = 5000;
   vm.noWrapSlides = false;
   vm.active = 0;
+
+  //Methods
+  //vm.openComponentSettings = ComponentDialogService.openComponentSettingsDialog;
 
   var pointerEventToXY = function (e) {
    var out = {x: 0, y: 0};
@@ -40,11 +43,11 @@
    var x = pointerEventToXY(ev).x;
    var y = pointerEventToXY(ev).y;
 
-   el.style.transform += 'translateX(' + (x) + 'px)';
-   el.style.transform = 'translateY(' + (y) + 'px)';
+   el.style.transform += 'translateX(' + x + 'px)';
+   el.style.transform = 'translateY(' + y + 'px)';
 
-   cat.style.transform += 'translateX(' + (x) + 'px)';
-   cat.style.transform = 'translateY(' + (y) + 'px)';
+   cat.style.transform += 'translateX(' + x + 'px)';
+   cat.style.transform = 'translateY(' + y + 'px)';
   });
 
   init();

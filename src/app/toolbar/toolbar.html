@@ -1,9 +1,14 @@
 <div layout="row" layout-align="start center">
  <div layout="row" layout-align="start center" flex class="gb-left-nav">
-  <md-button id="navigation-toggle" class="md-icon-button" ng-click="vm.toggleSidenav('navigation')"
-             aria-label="Toggle navigation" translate
-             translate-attr-aria-label="TOOLBAR.TOGGLE_NAVIGATION">
-   <md-icon md-font-icon="fa fa-bars" class="icon"></md-icon>
+  <md-button id="navigation-toggle" class="md-icon-button"
+             ng-click="vm.openSettingsDialog($event)"
+             aria-label="Toggle navigation">
+   <md-icon md-font-icon="fa  fa-paint-brush" class="icon"></md-icon>
+  </md-button>
+  <md-button id="navigation-toggle" class="md-icon-button"
+             ng-click="vm.openSettingsDialog($event)"
+             aria-label="Toggle navigation">
+   <md-icon md-font-icon="fa  fa-paint-brush" class="icon"></md-icon>
   </md-button>
   <div class="toolbar-separator"></div>
  </div>

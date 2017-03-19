@@ -7,11 +7,12 @@
          .controller('NavigationController', NavigationController);
 
  /** @ngInject */
- function NavigationController($scope)
+ function NavigationController(category, $scope)
  {
   var vm = this;
 
   // Data
+  vm.category = category;
   vm.bodyEl = angular.element('body');
   vm.folded = true;
   vm.msScrollOptions = {

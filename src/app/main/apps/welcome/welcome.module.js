@@ -18,7 +18,7 @@
    views: {
     'content@app': {
      templateUrl: 'src/app/main/apps/welcome/welcome.html',
-     controller: 'WelcomeController as vm'
+     controller: 'WelcomeController as welcomeCtrl'
     }
    },
    resolve: {

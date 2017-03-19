@@ -4,7 +4,7 @@
 
  angular
          .module('app.toolbar',
-                 [])
+                 ['app.components'])
          .config(config);
 
  /** @ngInject */

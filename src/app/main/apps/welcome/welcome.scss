@@ -27,10 +27,6 @@ $color-6: #077568;
 
 }
 
-svg {
- max-height: 80px;
-}
-
 .cls-1 {
  fill: #e4e3e5;
 }
@@ -99,9 +95,14 @@ svg {
  border-radius: 50%;
  background-color: #C20000;
  transition: transform 0.23s;
+ z-index: 3;
 }
 
-#ct-cat {
+#ct-cat-preview,
+#ct-cat{
+ @include position(absolute, null null null);
+ max-height: 80px;
+ max-width: 100px;
  transition: transform 0.80s;
 }
 

@@ -107,6 +107,16 @@ body {
  }
 }
 
+.ct-card-color {
+ height: 80px;
+ width: 80px;
+}
+
+.ct-cat-preview-row {
+ min-height: 150px;
+ height: 150px;
+ max-height: 150px;
+}
 .gb-section-furniture {
  padding: 30px 10px;
  //margin-bottom: 60px;
@@ -357,16 +367,10 @@ md-dialog {
 }
 .gb-horizontal-scroll {
  position:relative;
- &.gb-apps-scroll {
-  min-height: 226px;
+ &.gb-colors-scroll {
+  min-height: 100px;
   .gb-card-component {
-   max-width: 200px;
-  }
- }
- &.gb-notes-scroll {
-  min-height: 120px;
-  .gb-card-note {
-   max-width: 200px;
+   max-width: 100px;
   }
  }
  .gb-left-scroll,
@@ -670,6 +674,7 @@ md-dialog {
    md-tabs-content-wrapper {
     top: 50px;
    }
+
   }
  }
 }
@@ -788,6 +793,23 @@ md-tabs {
     md-list-item {
     }
    }
+  }
+ }
+
+ &.ct-color-tabs {
+  md-tabs-canvas,
+  md-pagination-wrapper {
+   visibility: none;
+   display: hidden;
+   height: 0px;
+  }
+  md-tab-item {
+   padding: 0;
+   height: 0;
+  }
+
+  md-tabs-content-wrapper {
+   top: 0;
   }
  }
 }
